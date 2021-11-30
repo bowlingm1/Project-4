@@ -1,6 +1,5 @@
 // MainMenu.cpp displays and inputs user data for Pet Service POS system.
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;
