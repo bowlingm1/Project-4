@@ -1,0 +1,162 @@
+// MainMenu.cpp displays and inputs user data for Pet Service POS system.
+
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+
+//function for the selected item and operation
+void MenuSelection(char selection) 
+{
+   cout << "Choose Selection: ";
+   cin >> qty;
+   if (selection == '1') 
+   { void displayMainMenu() }
+
+   //Display “Main Menu” over a popup; 
+
+ 	//Await User Input;  
+
+} 
+   else if (selection == '2') 
+   {
+       void displayStaffMenu() 
+
+
+ 	//Display “Staff Menu” over a popup; 
+
+ 	//Await User Input;  
+
+} 
+   }
+   else if (selection == '3') 
+   {
+     void displayCustomerMenu() 
+ 
+
+    //Display “Customer Menu” over a popup; 
+
+ 	//Await User Input;  
+
+} 
+   else if (selection == '4') 
+   {
+
+   char getString() 
+
+
+    //Await user input for storing string data  
+
+    //return string; 
+
+
+ else if (selection == '5') 
+   {
+
+   char getChar() 
+ 
+
+    //Await user input for storing char data  
+
+    //return char;  
+
+} 
+
+else if (selection == '6') 
+ {
+
+char getInt()  
+
+  
+
+//Await user input for storing int data 
+
+//return int;  
+
+} 
+
+} 
+
+
+//print the order
+void printOrder() {
+
+    //This is where Order will be displayed
+   cout << "Current Order:" << endl;
+
+
+}
+
+//Complete order will print the order and reset the all the item value
+void completeOrder() {
+   printOrder();
+   resetOrder();
+}
+
+//Exit the Program
+void exitPOS() {
+   cout << "Thank you for using the Team 5 Pet Service System" << endl;
+   system("PAUSE");
+   exit(0);
+}
+
+//Print Main Menu
+void printMenu() {
+   cout << "---------------------------------" << endl;
+   cout << "Pet Care System" << endl;
+   cout << "---------------------------------"<<endl;
+   cout << "Menu" << endl;
+   cout << "---------------------------------" << endl;
+   cout << "1          Main Menu          " << endl;
+   cout << "2          Staff Menu          " << endl;
+   cout << "3          Customer Menu          " << endl;
+   cout << "R          Reset" << endl;
+   cout << "P          Print Order" << endl;
+   cout << "C          Complete Order" << endl;
+   cout << "X          Exit" << endl;
+   cout << endl;
+}
+
+
+//selection function
+void processMenuSelection(char selection) {
+   if (selection == '1')
+       MenuSelection(selection);
+
+   else if (selection == '2')
+       MenuSelection(selection);
+  
+   else if (selection == '3')
+       MenuSelection(selection);
+  
+   else if (selection == '4')
+       MenuSelection(selection);
+  
+   else if (selection == 'R' || selection == 'r')
+       MenuSelection(selection);
+
+   else if(selection == 'C' || selection == 'c')
+       completeOrder();
+
+   else if(selection == 'P' || selection == 'p')
+       printOrder();
+  
+   else if(selection == 'X' || selection == 'x')
+       exitPOS();
+  
+   else
+       cout << "Wrong choice!"<<endl;
+}
+
+//main functiona
+int main()
+{
+   char MenuSelection;
+   do{
+       printMenu();
+       cin >> MenuSelection;
+       processMenuSelection(MenuSelection);
+   } while (MenuSelection != 'X');
+   return 0;
+}
