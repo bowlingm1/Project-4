@@ -118,7 +118,7 @@ void printMenu() {
 }
 
 
-//selection function
+//Function Selection
 void processMenuSelection(char selection) {
    if (selection == '1')
        MenuSelection(selection);
@@ -148,7 +148,7 @@ void processMenuSelection(char selection) {
        cout << "Wrong choice!"<<endl;
 }
 
-//main functiona
+//Main Function
 int main()
 {
    char MenuSelection;
