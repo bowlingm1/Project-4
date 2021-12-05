@@ -1,0 +1,223 @@
+#include <iostream>
+
+using namespace std;
+
+// functions for staff menu
+class staffClass
+{
+
+ public:
+
+	string fName;
+	string lName;
+	int staffID ;
+	string staffJobTitle;
+	string staffAddress;
+	int staffPhoneNumber;
+	float staffWage;
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+	
+		
+		string const getFName()
+		{
+			return fName;
+		};
+
+		void setFName(string user_input)
+		{
+			fName = user_input;
+		};
+
+		void updateFName()
+		{
+			string str_input;
+			cout << getFName() << endl;
+			cin >> str_input;
+			setFName(str_input);
+		};
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+		string const getLName()
+		{
+			return lName;
+		};
+
+		void setLName(string user_input)
+		{
+			lName = user_input;
+		};
+
+		void updateLName()
+		{
+			string str_input;
+			cout << getLName() << endl;
+			cin >> str_input;
+			setLName(str_input);
+		};
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+		int getStaffID()
+		{
+			return staffID;
+		};
+
+		void setStaffID(int user_input)
+		{
+			staffID = user_input;
+		};
+
+		void updateStaffID()
+		{
+			int user_input;
+			cout << getStaffID() << endl;
+			cin >> user_input;
+			setStaffID(user_input);
+		};
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+		string const getJobTitile()
+		{
+			return staffJobTitle;
+		};
+
+		void setJobTitle(string user_input)
+		{
+			staffJobTitle = user_input;
+		};
+
+		void updateJobTitile()
+		{
+			string str_input;
+			cout << getJobTitile() << endl;
+			cin >> str_input;
+			setJobTitle(str_input);
+		};
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+		void setAddress(string user_input)
+		{
+			staffAddress = user_input;
+		};
+
+		string getAddress()
+		{
+			return staffAddress;
+		};
+
+		void updateAddress()
+		{
+			string str_input;
+			cout << getAddress() << endl;
+			cin >> str_input;
+			setAddress(str_input);
+		};
+
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+		void setPhoneNumbers(int user_input)
+		{
+			staffPhoneNumber = user_input;
+		};
+
+		int getPhoneNumber()
+		{
+			return staffPhoneNumber;
+		};
+
+		void updatePhoneNumber()
+		{
+			int user_input;
+			cout << getPhoneNumber() << endl;
+			cin >> user_input;
+			setPhoneNumbers(user_input);
+		};
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+		void setWage(float user_input)
+		{
+			staffWage = user_input;
+		};
+
+		float getWage()
+		{
+			return staffWage;
+		};
+
+		void updateWage()
+		{
+			float user_input;
+			cout << getWage() << endl;
+			cin >> user_input;
+			setWage(user_input);
+		};
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+};
+
+class manageStaffClass : staffClass
+{
+	public:	
+		void manageStaff()
+		{
+			int choice;
+
+			cout << "Enter (1) to update staff ID\n"
+				 << "Enter (2) to update First name\n" 
+				 << "Enter (3) to update Last name\n"
+			 	 << "Enter (4) to update Position\n"
+				 << "Enter (5) to update Address\n"
+				 << "Enter (6) to update Phone Number\n"
+				 << "Enter (7) to update Wage\n";
+			cin >> choice;
+			switch (choice)
+			{
+				case 1:
+				{
+					updateStaffID();
+					break;
+				}
+				case 2:
+				{
+					updateFName();
+				}
+				case 3:
+				{
+					updateLName();
+				}
+				case 4:
+				{
+					updateJobTitile();
+				}
+				case 5:
+				{
+					updateAddress();
+				}
+				case 6:
+				{
+					updatePhoneNumber();
+					break;
+				}
+				case 7:
+				{
+					updateWage();
+					break;
+				}
+				
+			}
+		};
+};
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+int main()
+{
+	int choice;
+	do
+	{
+		manageStaffClass stfCls;
+		stfCls.manageStaff();
+		cout << "Quit ? (0)" << endl;
+		cin >> choice;
+	} while (choice != 0);
+
+
+	system("pause");
+	return 0;
+}
