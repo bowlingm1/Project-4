@@ -16,7 +16,7 @@ public:
 
 	string fName;
 	string lName;
-	int staffPhoneNumber;
+	float staffPhoneNumber;
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,31 +61,34 @@ public:
 		cout << "Enter Last Name: ";
 		cout << getLName() << endl;
 		cin >> str_input;
+		cout << "Updating Last Name to: " << str_input << endl;
 		setLName(str_input);
 	};
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////
 
-	void setPhoneNumbers(int user_input)
+	void setPhoneNumbers(float user_input)
 	{
 		staffPhoneNumber = user_input;
 	};
 
-	int getPhoneNumber()
+	float getPhoneNumber()
 	{
 		return staffPhoneNumber;
 	};
 
 	void updatePhoneNumber()
 	{
-		int user_input;
+		float user_input;
 
 		cout << getPhoneNumber() << endl;
 		cout << "Enter Phone Number: ";
 		cin >> user_input;
+		cout << "Updating Phone Number to: " << user_input << endl;
 		setPhoneNumbers(user_input);
 	};
 };
+
 
 class manageStaffClass : staffClass
 {
@@ -125,6 +128,151 @@ public:
 };
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
+class PetClass
+{
+
+public:
+
+	string petName;
+	string petBreed;
+	string petOwner;
+	int ownerPhoneNumber;
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	string const getpetName()
+	{
+		return petName;
+	};
+
+	void setpetName(string user_input)
+	{
+		petName = user_input;
+	};
+
+	void updatepetName()
+	{
+		string str_input;
+		cout << getpetName() << endl;
+		cin >> str_input;
+		cout << "Updating Pet Name to: " << str_input << endl;
+		setpetName(str_input);
+	};
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+	string const getpetBreed()
+	{
+		return petBreed;
+	};
+
+	void setpetBreed(string user_input)
+	{
+		petBreed = user_input;
+	};
+
+	void updatepetBreed()
+	{
+		string str_input;
+
+		cout << "Enter Pet Breed: ";
+		cout << getpetBreed() << endl;
+		cin >> str_input;
+		cout << "Updating Pet Breed to: " << str_input << endl;
+		setpetBreed(str_input);
+	};
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+
+	string const getpetOwner()
+	{
+		return petOwner;
+	};
+
+	void setpetOwner(string user_input)
+	{
+		petOwner = user_input;
+	};
+
+
+	void updatepetOwner()
+	{
+		string str_input;
+
+		cout << "Enter Pet Owner Name: ";
+		cout << getpetOwner() << endl;
+		cin >> str_input;
+		cout << "Updating Pet Owner Name to:" << str_input << endl;
+		setpetOwner(str_input);
+	};
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+
+	void setOwnerPhoneNumbers(float user_input)
+	{
+		ownerPhoneNumber = user_input;
+	};
+
+	float getPhoneNumber()
+	{
+		return ownerPhoneNumber;
+	};
+
+	void updateOwnerPhoneNumber()
+	{
+		float user_input;
+
+		cout << getPhoneNumber() << endl;
+		cout << "Enter Owner Phone Number: ";
+		cin >> user_input;
+		cout << "Updating Owner Phone Number to: " << user_input << endl;
+		setOwnerPhoneNumbers(user_input);
+	};
+};
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+class ManagePetClass : PetClass
+{
+public:
+	void managePet()
+	{
+		int choice;
+
+		cout << "Enter (1) to update Pet Name\n"
+			<< "Enter (2) to update Pet Breed\n"
+			<< "Enter (3) to update Pet Owner\n"
+			<< "Enter (4) to update Pet Owner Phone Number\n";
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+		{
+			updatepetName();
+			break;
+		}
+		case 2:
+		{
+			updatepetBreed();
+			break;
+		}
+		case 3:
+		{
+			updatepetOwner();
+			break;
+		}
+		case 4:
+		{
+			updateOwnerPhoneNumber();
+			break;
+		}
+
+		}
+	};
+};
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
 //function for the selected item and operation
@@ -157,12 +305,14 @@ void MenuSelection(char selection)
 
 	if (selection == '3')
 	{
-		void displayCustomerMenu();
-
-
-		//Display “Customer Menu” over a popup; 
+		//Display “Pet Menu” over a popup; 
+		void displayPetMenu();
 
 		//Await User Input;  
+
+		ManagePetClass stfCls;
+		stfCls.managePet();
+
 
 	}
 	if (selection == '4')
@@ -286,6 +436,19 @@ int main()
 		processMenuSelection(MenuSelection);
 	} while (MenuSelection != 'X');
 	return 0;
+
+
+	system("pause");
+	return 0;
+
+	int choice;
+	do
+	{
+		ManagePetClass stfCls;
+		stfCls.managePet();
+		cout << "Quit ? (0)" << endl;
+		cin >> choice;
+	} while (choice != 0);
 
 
 	system("pause");
