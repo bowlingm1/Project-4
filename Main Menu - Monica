@@ -8,160 +8,287 @@
 using namespace std;
 
 
+// functions for staff menu
+class staffClass
+{
+
+public:
+
+	string fName;
+	string lName;
+	int staffPhoneNumber;
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	string const getFName()
+	{
+
+		return fName;
+
+	};
+
+	void setFName(string user_input)
+	{
+		fName = user_input;
+
+	};
+
+	void updateFName()
+	{
+		string str_input;
+		cout << getFName() << endl;
+		cin >> str_input;
+		cout << "Updating First Name to: " << str_input << endl;
+		setFName(str_input);
+	};
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+	string const getLName()
+	{
+		return lName;
+	};
+
+	void setLName(string user_input)
+	{
+		lName = user_input;
+	};
+
+	void updateLName()
+	{
+		string str_input;
+
+		cout << "Enter Last Name: ";
+		cout << getLName() << endl;
+		cin >> str_input;
+		setLName(str_input);
+	};
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+
+	void setPhoneNumbers(int user_input)
+	{
+		staffPhoneNumber = user_input;
+	};
+
+	int getPhoneNumber()
+	{
+		return staffPhoneNumber;
+	};
+
+	void updatePhoneNumber()
+	{
+		int user_input;
+
+		cout << getPhoneNumber() << endl;
+		cout << "Enter Phone Number: ";
+		cin >> user_input;
+		setPhoneNumbers(user_input);
+	};
+};
+
+class manageStaffClass : staffClass
+{
+public:
+	void manageStaff()
+	{
+		int choice;
+
+		cout << "Enter (1) to update First name\n"
+			<< "Enter (2) to update Last name\n"
+			<< "Enter (3) to update Phone Number\n"
+			;
+		cin >> choice;
+
+
+		switch (choice)
+		{
+		case 1:
+		{
+			updateFName();
+			break;
+		}
+		case 2:
+		{
+			updateLName();
+			break;
+		}
+		case 3:
+		{
+			updatePhoneNumber();
+			break;
+
+		}
+		}
+
+	};
+};
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 //function for the selected item and operation
 void MenuSelection(char selection)
 {
-    cout << "Choose Selection: ";
-    cin >> selection;
-    if (selection == '1')
-    {
-        void displayMainMenu();
-    }
+	cout << "Choose Selection: ";
+	cin >> selection;
+	if (selection == '1')
+	{
+		void displayMainMenu();
+	}
 
-    //Display “Main Menu” over a popup; 
+	//Display “Main Menu” over a popup; 
 
-     //Await User Input;  
+	 //Await User Input;  
 
-    if (selection == '2')
-    {
-        void displayStaffMenu();
+	if (selection == '2')
+	{
 
-
-        //Display “Staff Menu” over a popup; 
-
-        //Await User Input;  
-    }
-
-   if (selection == '3')
-   {
-       void displayCustomerMenu();
+		//Display “Staff Menu” over a popup; 
+		void displayStaffMenu();
 
 
-       //Display “Customer Menu” over a popup; 
-
-       //Await User Input;  
-
-   }
-   if (selection == '4')
-   {
-
-       char getString();
+		//Await User Input;
+		manageStaffClass stfCls;
+		stfCls.manageStaff();
 
 
-       //Await user input for storing string data  
+	}
 
-       //return string; 
-
-   }
-   if (selection == '5')
-   {
-
-       char getChar();
+	if (selection == '3')
+	{
+		void displayCustomerMenu();
 
 
-       //Await user input for storing char data  
+		//Display “Customer Menu” over a popup; 
 
-       //return char;  
+		//Await User Input;  
 
-   };
+	}
+	if (selection == '4')
+	{
 
-   if (selection == '6')
-   {
-
-       char getInt();
-
+		char getString();
 
 
-       //Await user input for storing int data 
+		//Await user input for storing string data  
 
-       //return int;  
+		//return string; 
 
-   };
+	}
+	if (selection == '5')
+	{
+
+		char getChar();
+
+
+		//Await user input for storing char data  
+
+		//return char;  
+
+	};
+
+	if (selection == '6')
+	{
+
+		char getInt();
+
+
+
+		//Await user input for storing int data 
+
+		//return int;  
+
+	};
 
 }
 
 
 //print the order
-   void printOrder()
-   {
+void printOrder()
+{
 
-    //This is where Order will be displayed
-    cout << "Current Order:" << endl;
+	//This is where Order will be displayed
+	cout << "Current Order:" << endl;
 
 
 }
 
 //Complete order will print the order and reset the all the item value
 void completeOrder() {
-    printOrder();
+	printOrder();
 
 }
 
 
 //Exit the Program
 void exitPOS() {
-    cout << "Thank you for using the Team 5 Pet Service System" << endl;
-    system("PAUSE");
-    exit(0);
+	cout << "Thank you for using the Team 5 Pet Service System" << endl;
+	system("PAUSE");
+	exit(0);
 }
 
 //Print Main Menu
 void printMenu() {
-    cout << "---------------------------------" << endl;
-    cout << "Pet Care System" << endl;
-    cout << "---------------------------------" << endl;
-    cout << "Menu" << endl;
-    cout << "---------------------------------" << endl;
-    cout << "1          Main Menu          " << endl;
-    cout << "2          Staff Menu          " << endl;
-    cout << "3          Customer Menu          " << endl;
-    cout << "R          Reset" << endl;
-    cout << "P          Print Order" << endl;
-    cout << "C          Complete Order" << endl;
-    cout << "X          Exit" << endl;
-    cout << endl;
+	cout << "---------------------------------" << endl;
+	cout << "Pet Care System" << endl;
+	cout << "---------------------------------" << endl;
+	cout << "Menu" << endl;
+	cout << "---------------------------------" << endl;
+	cout << "1          Main Menu          " << endl;
+	cout << "2          Staff Menu          " << endl;
+	cout << "3          Customer Menu          " << endl;
+	cout << "R          Reset" << endl;
+	cout << "P          Print Order" << endl;
+	cout << "C          Complete Order" << endl;
+	cout << "X          Exit" << endl;
+	cout << endl;
 }
 
 
 //Function Selection
 void processMenuSelection(char selection) {
-    if (selection == '1')
-        MenuSelection(selection);
+	if (selection == '1')
+		MenuSelection(selection);
 
-    else if (selection == '2')
-        MenuSelection(selection);
+	else if (selection == '2')
+		MenuSelection(selection);
 
-    else if (selection == '3')
-        MenuSelection(selection);
+	else if (selection == '3')
+		MenuSelection(selection);
 
-    else if (selection == '4')
-        MenuSelection(selection);
+	else if (selection == '4')
+		MenuSelection(selection);
 
-    else if (selection == 'R' || selection == 'r')
-        MenuSelection(selection);
+	else if (selection == 'R' || selection == 'r')
+		MenuSelection(selection);
 
-    else if (selection == 'C' || selection == 'c')
-        completeOrder();
+	else if (selection == 'C' || selection == 'c')
+		completeOrder();
 
-    else if (selection == 'P' || selection == 'p')
-        printOrder();
+	else if (selection == 'P' || selection == 'p')
+		printOrder();
 
-    else if (selection == 'X' || selection == 'x')
-        exitPOS();
+	else if (selection == 'X' || selection == 'x')
+		exitPOS();
 
-    else
-        cout << "Wrong choice!" << endl;
+	else
+		cout << "Wrong choice!" << endl;
 }
 
 //Main Function
 int main()
 {
-    char MenuSelection;
-    do {
-        printMenu();
-        cin >> MenuSelection;
-        processMenuSelection(MenuSelection);
-    } while (MenuSelection != 'X');
-    return 0;
+	char MenuSelection;
+	do {
+		printMenu();
+		cin >> MenuSelection;
+		processMenuSelection(MenuSelection);
+	} while (MenuSelection != 'X');
+	return 0;
+
+
+	system("pause");
+	return 0;
 }
 
