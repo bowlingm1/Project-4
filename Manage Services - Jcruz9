@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+class ManageServicesClass
+// functions for Manage Services Class
+{
+public:
+	void addservices()
+	{
+		int choice;
+		cout << "Enter (1) to add a service.\n";
+		cout << "Enter (2) to remove service\n";
+		cout << "Enter (3) to edit a service\n";
+		cin >> choice;
+		if (selection == '1')
+			void enterservice();
+		else if (selection == '2')
+			void removeservice();
+		else if (selection == '3')
+			void editservice();
+	}
+}
+int main()
+{
+	int choice;
+	do
+	{
+		ManageServicesClass attp;
+		attp.ManageServices();
+		cout << "Exit? (0)" << endl;
+		cin >> choice;
+	} while (choice != 0);
+
+	system("pause");
+	return 0;
+}
