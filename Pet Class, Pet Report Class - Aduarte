@@ -1,0 +1,64 @@
+#include <iostream>
+#include <fstream>
+#include<string>
+
+using namespace std;
+
+class Pet{
+	string petname;
+	string petbreed;
+	string petowner;
+	int phonenumber;
+
+	// constructor
+	Pet(string pn, string pb, string po, int p) {
+		petname = pn;
+		petbreed = pb;
+		petowner = po;
+		phonenumber = p;
+	}
+
+	string getName() {
+		return petname;
+	}
+
+	string getBreed() {
+		return petbreed;
+	}
+
+	string getOwner() {
+		return petowner;
+	}
+
+	int getPhone() {
+		return phonenumber;
+	}
+}
+#include <iostream>
+#include <fstream>
+#include<string>
+
+using namespace std;
+
+class PetReportClass {
+	Pet pet;	
+	string petReport;
+
+	PetReportClass(Pet p) {
+		pet = p;
+	}
+
+	void constructPetReport() {
+		//add pet info to string
+		petReport = "\nPet Name: " + pet.getName()
+			+ "\nBreed: " + pet.getBreed()
+			+ "\Owner : " + pet.getOwner()
+			+ "\Phone: " + pet.getPhone();
+	}
+
+	string getPetReport(int petID) {
+		return petReport;
+	}
+ 
+};
+
